@@ -1,0 +1,33 @@
+<h2 class="content-block">Tasks</h2>
+
+<dx-data-grid class="dx-card wide-card"
+              [dataSource]="dataSource"
+              [showBorders]="false"
+              [focusedRowEnabled]="true"
+              [focusedRowIndex]="0"
+              [columnAutoWidth]="true"
+              [height]="getHeight()"
+              [columnHidingEnabled]="true">
+
+  <dxo-paging [pageSize]="100"></dxo-paging>
+  <!--  <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>-->
+  <dxo-scrolling mode="virtual"></dxo-scrolling>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+  <dxi-column
+    dataField="VIN"
+    [width]="90"
+    [hidingPriority]="2">
+  </dxi-column>
+  <dxi-column
+    dataField="NR_INMATR"
+    [width]="190"
+    caption="Subject"
+    [hidingPriority]="8">
+  </dxi-column>
+  <dxi-column
+    dataField="DATA_INTRODUCERE"
+    caption="Status"
+    [hidingPriority]="6">
+  </dxi-column>
+</dx-data-grid>
